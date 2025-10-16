@@ -85,7 +85,6 @@ body {
 .songs {
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 .song-header {
   display: none;
@@ -104,8 +103,9 @@ body {
 }
 .song-info-mobile {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 5px;
+  align-items: center;
 }
 .song-info p:first-child {
   font-weight: 600;
@@ -140,46 +140,68 @@ body {
   border-radius: 4px;
   transition: background 0.2s;
 }
-.sidebar{
-  display:none;
-  flex-flow:wrap column;
+.sidebar {
+  display: none;
+  flex-flow: wrap column;
   background-color: var(--background);
   height: auto;
   width: 12rem;
   margin: 0;
-  padding:2rem 0rem 0px .7rem;
+  padding: 2rem 0rem 0px 0.7rem;
 }
-.sidebar-header{
-  margin:1rem;
+.sidebar-header {
+  margin: 1rem;
   color: var(--off-white);
-  font-weight:bold;
+  font-weight: bold;
 }
-.categories{
-  display:flex;
-  margin:0 1rem 0 1rem;
-  gap:10px;
-  font-size: .7rem;
+.categories {
+  display: flex;
+  margin: 0 1rem 0 1rem;
+  gap: 10px;
+  font-size: 0.7rem;
+  cursor:pointer;
 }
-.option-buttons{
-  display:flex;
+.option-buttons {
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  position:relative;
+  position: relative;
   margin: 1rem;
-  gap:5px;
+  gap: 5px;
 }
-.option-buttons button{
-  font-size: .75rem;
+.option-buttons button {
+  font-size: 0.75rem;
   text-align: start;
   width: 10rem;
   padding: 8px;
   border: 1px solid var(--darker-gray);
   border-radius: 5px;
-  color:white;
+  color: white;
   background-color: var(--dark-gray);
+  cursor: pointer;
+}
+.option-buttons button:hover{
+  background-color: var(--darker-gray);
+  transition: color 0.5s;
+}
+.categories p:hover{
+  color: var(--darker-gray);
+  transition: color 0.5s;
 }
 
+.title {
+    display: flex;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+  }
+  .icon {
+    width: 20%;
+    height: auto;
+    border-radius: 10px;
+  }
 @media (min-width: 770px) {
   .song-header {
     display: flex;
@@ -217,7 +239,29 @@ body {
   .songs row {
     padding: 0;
   }
-  .sidebar{
-    display:flex;
+  .sidebar {
+    display: flex;
+  }
+  
+  .song-info .wide p {
+    padding-left: 30px;
+  }
+  .songIcon {
+    width: 2rem;
+    height: 2rem;
+  }
+  .title {
+    display: flex;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+  }
+  .icon {
+    width: 20%;
+    max-width: 50px;
+    min-width: 50px;
+    height: auto;
+    border-radius: 10px;
   }
 }
